@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Eldar Wallet</string>
+    <string name="etUser" />
+    <string name="etPass" />
+    <string name="btn_next">Siguiente</string>
+    <string name="tv_loading">Cargando...</string>
+</resources>
