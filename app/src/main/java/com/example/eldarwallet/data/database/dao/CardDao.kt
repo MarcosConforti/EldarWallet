@@ -8,12 +8,12 @@ import com.example.eldarwallet.data.database.entities.CardEntities
 
 @Dao
 interface CardDao {
-    @Query("SELECT * FROM card_table")
-    suspend fun getAllDrinks():List<CardEntities>
+ /*   @Query("SELECT * FROM CardEntities")
+    suspend fun getAllCards():List<CardEntities>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(card:List<CardEntities>)
 
-    @Query("DELETE FROM card_table")
-    suspend fun deleteAllCards()
+    @Query("DELETE FROM CardEntities")
+    suspend fun deleteAllCards()*/
 }
