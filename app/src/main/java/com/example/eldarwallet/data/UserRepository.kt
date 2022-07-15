@@ -1,8 +1,9 @@
 package com.example.eldarwallet.data
 
 import com.example.eldarwallet.data.model.User
+import javax.inject.Inject
 
-class UserRepository {
+class UserRepository @Inject constructor() {
     suspend fun validateUser(user: User): Boolean {
         if(user.user == "user" && user.pass == "123"){
             return true

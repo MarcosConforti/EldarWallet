@@ -1,25 +1,23 @@
-package com.example.eldarwallet.ui
+package com.example.eldarwallet.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import com.example.eldarwallet.MenuActivity
 import com.example.eldarwallet.R
 import com.example.eldarwallet.databinding.ActivityMainBinding
 import com.example.eldarwallet.ui.viewmodel.UserViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val userViewModel: UserViewModel by viewModels()
-    private lateinit var  dialog:AlertDialog
+    private lateinit var dialog:AlertDialog
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +42,6 @@ class LoginActivity : AppCompatActivity() {
                 showError()
             }
         })
-
 
     }
 
