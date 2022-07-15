@@ -17,7 +17,7 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val userViewModel: UserViewModel by viewModels()
-    private lateinit var dialog:AlertDialog
+    private lateinit var dialog: AlertDialog
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,17 +37,17 @@ class LoginActivity : AppCompatActivity() {
         userViewModel.userLiveData.observe(this, Observer { isUserValid ->
             dialog.dismiss()
             if (isUserValid) {
-              gotoMenu()
-            }else{
+                gotoMenu()
+            } else {
                 showError()
             }
         })
 
     }
 
-    fun initDialog(){
+    private fun initDialog() {
         // set
-        val dialogView = layoutInflater.inflate(R.layout.progress_bar,null)
+        val dialogView = layoutInflater.inflate(R.layout.progress_bar, null)
         //set Dialog
         val builder = AlertDialog.Builder(this)
         builder.setView(dialogView)
@@ -60,7 +60,8 @@ class LoginActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
-    private fun showError(){
-        Toast.makeText(this,getText(R.string.loginError),Toast.LENGTH_SHORT).show()
+
+    private fun showError() {
+        Toast.makeText(this, getText(R.string.loginError), Toast.LENGTH_SHORT).show()
     }
 }

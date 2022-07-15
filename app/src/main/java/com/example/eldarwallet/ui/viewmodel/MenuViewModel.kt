@@ -19,7 +19,7 @@ class MenuViewModel @Inject constructor(private val getCardsUseCase: GetCardsUse
     val cardsLiveData: LiveData<List<CardModel>> = _cardsLiveData
 
     init {
-    callCardUseCase()
+        callCardUseCase()
     }
 
     fun callCardUseCase() {

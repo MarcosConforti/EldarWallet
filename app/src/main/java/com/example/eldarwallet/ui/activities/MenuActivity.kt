@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.eldarwallet.databinding.ActivityMenuBinding
 import com.example.eldarwallet.ui.cardRecycler.CardAdapter
 import com.example.eldarwallet.ui.viewmodel.MenuViewModel
-import com.example.eldarwallet.ui.viewmodel.UserViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -6,17 +6,16 @@
     <string name="tv_loading">Cargando...</string>
     <string name="saldo">Saldo:</string>
     <string name="saldoDisponible">$200</string>
-    <string name="cardThree">123</string>
-    <string name="cardTwo">5031 7557 3453 0604</string>
-    <string name="cardOne">Mastercard</string>
     <string name="loginError">Usuario o Contraseña invalido</string>
     <string name="cardError">Campos invalidos</string>
     <string name="cardErrorTarjeta">Error al cargar Tarjeta</string>
     <string name="etCardNumber">Numero de Tarjeta:</string>
     <string name="etCode">Codigo:</string>
-    <string name="etYear">Año /</string>
+    <string name="etYear">Año</string>
     <string name="etMonth">Mes</string>
     <string name="expiration">Vencimiento:</string>
     <string name="btn_addCard">Añadir Tarjeta</string>
     <string name="expireDate">11/25</string>
+    <string name="card">Nueva Tarjeta</string>
+    <string name="cardOne">Tarjeta</string>
 </resources>

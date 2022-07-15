@@ -24,40 +24,21 @@ class NewCardActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.etCardNumber.addTextChangedListener {
-            if(it!=null && it.isNotEmpty()) {
+            if (it != null && it.isNotEmpty()) {
                 val cardName = when (it[0]) {
                     '3' -> "American Express"
                     '4' -> "Visa"
                     '5' -> "Master Card"
                     else -> {
-                        "Tarjeta Desconocida"
+                        "Desconocida"
                     }
                 }
-                binding.tvNombre.text = "Nueva Tarjeta $cardName"
+                binding.tvCard.text = "Nueva Tarjeta $cardName"
             }
         }
 
         binding.btnAddCard.setOnClickListener {
-            //hacer todo en una funcion bien piola
-            val cardNumber = binding.etCardNumber.text.toString()
-            val cardCode = binding.etCode.text.toString()
-            val cardMonth = binding.etMonth.text.toString()
-            val cardYear = binding.etYear.text.toString()
-            val expireDate = "$cardMonth/$cardYear"
-            val cardName = when(cardNumber.first()){
-                '3'-> "American Express"
-                '4'-> "Visa"
-                '5'-> "Master Card"
-                else -> {
-                    "Tarjeta Desconocida"
-                }
-            }
-            if (validateCard(cardNumber) && validateCodeCard(cardCode) && validateMonth(cardMonth)) {
-                addCardViewModel.addCard(cardName,cardNumber, cardCode,expireDate)
-            } else {
-                showError(getText(R.string.cardError).toString())
-            }
-
+            validatedAll()
         }
         addCardViewModel.addCardLiveData.observe(this, Observer { isCardValid ->
             if (isCardValid) {
@@ -76,8 +57,29 @@ class NewCardActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun showError(mensaje:String) {
+    private fun showError(mensaje: String) {
         Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun validatedAll() {
+        val cardNumber = binding.etCardNumber.text.toString()
+        val cardCode = binding.etCode.text.toString()
+        val cardMonth = binding.etMonth.text.toString()
+        val cardYear = binding.etYear.text.toString()
+        val expireDate = "$cardMonth/$cardYear"
+        val cardName = when (cardNumber.first()) {
+            '3' -> "American Express"
+            '4' -> "Visa"
+            '5' -> "Master Card"
+            else -> {
+                "Tarjeta Desconocida"
+            }
+        }
+        if (validateCard(cardNumber) && validateCodeCard(cardCode) && validateMonth(cardMonth)) {
+            addCardViewModel.addCard(cardName, cardNumber, cardCode, expireDate)
+        } else {
+            showError(getText(R.string.cardError).toString())
+        }
     }
 
     private fun validateCard(cardNumber: String): Boolean {
@@ -85,7 +87,6 @@ class NewCardActivity : AppCompatActivity() {
         return cardNumber.length == 16
     }
 
-    //imputtype solo numeros
     private fun validateCodeCard(cardCode: String): Boolean {
         return cardCode.length in 3..4
     }

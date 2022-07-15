@@ -11,13 +11,14 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AddCardViewModel @Inject constructor(private val addCardUseCase: AddCardUseCase) : ViewModel() {
+class AddCardViewModel @Inject constructor(private val addCardUseCase: AddCardUseCase) :
+    ViewModel() {
 
     private val _addCardLiveData = MutableLiveData<Boolean>()
 
     val addCardLiveData: LiveData<Boolean> = _addCardLiveData
 
-    fun addCard(cardName: String,cardNumber:String,cardCode: String, expireDate:String) {
+    fun addCard(cardName: String, cardNumber: String, cardCode: String, expireDate: String) {
         viewModelScope.launch {
             val result = addCardUseCase(CardModel(cardName, cardNumber, cardCode, expireDate))
             _addCardLiveData.value = result

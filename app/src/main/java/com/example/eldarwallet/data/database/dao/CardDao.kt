@@ -5,7 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.eldarwallet.data.database.entities.CardEntities
-import com.example.eldarwallet.data.model.CardModel
+
 
 @Dao
 interface CardDao {

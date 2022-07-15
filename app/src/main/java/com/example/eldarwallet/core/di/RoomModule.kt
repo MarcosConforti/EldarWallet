@@ -20,7 +20,7 @@ object RoomModule {
     @Singleton
     @Provides
     fun provideCardRoom(@ApplicationContext context: Context): CardDataBase {
-        return Room.databaseBuilder(context,CardDataBase::class.java, CARD_DATABASE_NAME).build()
+        return Room.databaseBuilder(context, CardDataBase::class.java, CARD_DATABASE_NAME).build()
     }
 
     @Provides
