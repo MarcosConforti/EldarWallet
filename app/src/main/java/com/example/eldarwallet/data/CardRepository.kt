@@ -3,6 +3,7 @@ package com.example.eldarwallet.data
 import com.example.eldarwallet.data.database.dao.CardDao
 import com.example.eldarwallet.data.database.entities.CardEntities
 import com.example.eldarwallet.data.model.CardModel
+import java.lang.Exception
 import javax.inject.Inject
 
 class CardRepository @Inject constructor(private val cardDao: CardDao) {
@@ -21,7 +22,7 @@ class CardRepository @Inject constructor(private val cardDao: CardDao) {
             )
             cardDao.insert(entities)
             true
-        } catch (e: Error) {
+        } catch (e: Exception) {
             false
         }
     }

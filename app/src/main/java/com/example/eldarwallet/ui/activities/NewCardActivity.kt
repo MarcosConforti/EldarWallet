@@ -1,18 +1,16 @@
 package com.example.eldarwallet.ui.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Observer
 import com.example.eldarwallet.R
-import com.example.eldarwallet.data.model.CardModel
 import com.example.eldarwallet.databinding.ActivityNewCardBinding
 import com.example.eldarwallet.ui.viewmodel.AddCardViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import java.time.Instant
-import java.time.LocalDate
 
 @AndroidEntryPoint
 class NewCardActivity : AppCompatActivity() {
@@ -24,6 +22,20 @@ class NewCardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityNewCardBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.etCardNumber.addTextChangedListener {
+            if(it!=null && it.isNotEmpty()) {
+                val cardName = when (it[0]) {
+                    '3' -> "American Express"
+                    '4' -> "Visa"
+                    '5' -> "Master Card"
+                    else -> {
+                        "Tarjeta Desconocida"
+                    }
+                }
+                binding.tvNombre.text = "Nueva Tarjeta $cardName"
+            }
+        }
 
         binding.btnAddCard.setOnClickListener {
             //hacer todo en una funcion bien piola
@@ -43,8 +55,7 @@ class NewCardActivity : AppCompatActivity() {
             if (validateCard(cardNumber) && validateCodeCard(cardCode) && validateMonth(cardMonth)) {
                 addCardViewModel.addCard(cardName,cardNumber, cardCode,expireDate)
             } else {
-                Toast.makeText(this, "error al llenar campos", Toast.LENGTH_SHORT).show()
-                //toast de error datos invalidos
+                showError(getText(R.string.cardError).toString())
             }
 
         }
@@ -53,7 +64,7 @@ class NewCardActivity : AppCompatActivity() {
                 //limpiar los campos y no volver
                 goToMenu()
             } else {
-                showError()
+                showError(getText(R.string.cardErrorTarjeta).toString())
             }
         })
 
@@ -65,8 +76,8 @@ class NewCardActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun showError() {
-        Toast.makeText(this, getText(R.string.cardError), Toast.LENGTH_SHORT).show()
+    private fun showError(mensaje:String) {
+        Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
     }
 
     private fun validateCard(cardNumber: String): Boolean {
