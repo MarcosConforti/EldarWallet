@@ -1,20 +1,20 @@
 # Eldar Wallet
 
-This is a sample Pokemon App written in Kotlin using a modern Android Architecture
+This is a sample Wallet written in Kotlin using a modern Android Architecture
 
 # Technology stack
 
 - IDE: Android Studio
 - Architecture: Clean Architecture + MVVM & LiveData
 - Programming Language: Kotlin
-- Third Party Libraries: Room,Dagger Hilt, Gson
+- Third Party Libraries: Room, Retrofit, Dagger Hilt, Gson, Mockk
 
 # About Project
 
 - Login
 - Pantalla principal: Saldo, tarjetas asociadas, botones de acceso a otras pantallas
 - Agregar una nueva tarjeta
-- Pago con QR(pendiente, aqui usariamos Retrofit)
+- Pago con QR
 - Generar Pago(pendiente)
 
 # Others

@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.eldarwallet.data.model.User
+import com.example.eldarwallet.data.model.UserModel
 import com.example.eldarwallet.domain.GetUserUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
@@ -20,7 +20,7 @@ class UserViewModel @Inject constructor(private val getUserUseCase: GetUserUseCa
 
     fun callUserUseCase(user: String, pass: String) {
         viewModelScope.launch {
-            val result = getUserUseCase(User(user, pass))
+            val result = getUserUseCase(UserModel(user, pass))
             delay(3000)
             _userLiveData.value = result
         }

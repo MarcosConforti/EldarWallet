@@ -4,7 +4,7 @@
     <string name="etPass" />
     <string name="btn_next">Siguiente</string>
     <string name="tv_loading">Cargando...</string>
-    <string name="saldo">Saldo:</string>
+    <string name="saldo">Saldo Disponible:</string>
     <string name="saldoDisponible">$200</string>
     <string name="loginError">Usuario o Contraseña invalido</string>
     <string name="cardError">Campos invalidos</string>

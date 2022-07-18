@@ -22,7 +22,7 @@ class MenuViewModel @Inject constructor(private val getCardsUseCase: GetCardsUse
         callCardUseCase()
     }
 
-    fun callCardUseCase() {
+    private fun callCardUseCase() {
         viewModelScope.launch {
             val result = getCardsUseCase()
             if (result.isNotEmpty()) {
