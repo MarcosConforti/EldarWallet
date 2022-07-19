@@ -37,12 +37,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout_blue" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btn_mostrarQr"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:src="@mipmap/ic_qr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_qr" />
+    <TextView
+        android:id="@+id/tv_newPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/saveQR"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_mostrarQr" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

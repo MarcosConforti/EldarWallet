@@ -8,7 +8,7 @@ This is a sample Wallet written in Kotlin using a modern Android Architecture
 - Architecture: Clean Architecture + MVVM & LiveData
 - API: [RapidApi](https://rapidapi.com/neutrinoapi/api/qr-code/)
 - Programming Language: Kotlin
-- Third Party Libraries: Room, Retrofit,OKhttp3, Dagger Hilt, Gson, Mockk
+- Third Party Libraries: Room, Retrofit, OKhttp3, Dagger Hilt, Gson, Mockk
 
 # About Project
 
@@ -17,6 +17,7 @@ This is a sample Wallet written in Kotlin using a modern Android Architecture
 - Agregar una nueva tarjeta
 - Pago con QR
 - Generar Pago
+- Se crearon dos Test Unitarios
 
 # Others
 

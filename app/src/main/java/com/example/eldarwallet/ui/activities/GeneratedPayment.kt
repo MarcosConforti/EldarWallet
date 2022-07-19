@@ -1,5 +1,6 @@
 package com.example.eldarwallet.ui.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -35,19 +36,14 @@ class GeneratedPayment : AppCompatActivity(), OnClickCardListener {
 
         })
 
-        binding.btnGeneratePayment.setOnClickListener {
-            generatedTransaction()
-        }
-
     }
 
     override fun onCardClicked(card: CardModel) {
-        generatedTransaction()
+        goToPayment()
     }
-
-    private fun generatedTransaction() {
-        Toast.makeText(this, getText(R.string.succesful), Toast.LENGTH_SHORT).show()
-
+    private fun goToPayment(){
+        val intent = Intent(this, PaymentActivity::class.java)
+        startActivity(intent)
     }
 
 

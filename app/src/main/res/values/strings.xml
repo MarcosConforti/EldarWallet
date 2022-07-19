@@ -25,5 +25,6 @@
     <string name="payment">Generar Pago</string>
     <string name="add_transaction">Agregar transaccion</string>
     <string name="succesful">Transaccion exitosa</string>
+    <string name="saveQR">Guardar</string>
 
 </resources>

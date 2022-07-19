@@ -1,19 +1,25 @@
 package com.example.eldarwallet.data.network
 
 
-import okhttp3.Response
-import retrofit2.http.Header
+import okhttp3.ResponseBody
+import retrofit2.http.Headers
 import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface RapidApiService {
 
-    @POST("/qr-code?width=128&height=128&fg-color=%23000000&bg-color=%23ffffff")
+    @Headers(
+        "content-type:application/x-www-form-urlencoded",
+        "X-RapidAPI-Key:a9ffaab7fdmsh91bf5f739bf1c9bp1c4111jsn9a87ff2583f4",
+        "X-RapidAPI-Host:neutrinoapi-qr-code.p.rapidapi.com"
+    )
+    @POST("/qr-code")
     suspend fun getQR(
-        @Header("content-type") contentType: String,
-        @Header("X-RapidAPI-Key") rapidApiKey: String,
-        @Header("X-RapidAPI-Host") rapidApiHost: String,
-        @Query("content") content: String
-    ): Response
+        @Query("content") content: String,
+        @Query("width") width: Int = 128,
+        @Query("height") height: Int = 128,
+        @Query("fg-color") fgColor: String = "%23000000",
+        @Query("bg-color") bgColor: String = "%23ffffff"
+    ): ResponseBody
 
 }
