@@ -7,14 +7,20 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Qualifier
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
+    @Qualifier
+    @Retention(AnnotationRetention.BINARY)
+    annotation class RapidApiRetrofit
+
     @Singleton
     @Provides
+    @RapidApiRetrofit
     fun provideRetrofit():Retrofit{
         return Retrofit.Builder()
             .baseUrl("https://neutrinoapi-qr-code.p.rapidapi.com")
@@ -24,7 +30,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideAPIService(retrofit: Retrofit): RapidApiService {
+    fun provideAPIService(@RapidApiRetrofit retrofit: Retrofit): RapidApiService {
         return retrofit.create(RapidApiService::class.java)
     }
 }
