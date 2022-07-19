@@ -1,6 +1,7 @@
 package com.example.eldarwallet.ui.viewmodel
 
 import android.graphics.Bitmap
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,7 +15,7 @@ class QrViewModel @Inject constructor(private val getQRUseCase: GetQRUseCase) : 
 
     private val _getQrLiveData = MutableLiveData<Bitmap?>()
 
-    val getQRLiveData: MutableLiveData<Bitmap?> = _getQrLiveData
+    val getQRLiveData: LiveData<Bitmap?> = _getQrLiveData
 
     fun callGetQRUseCase(content: String) {
         viewModelScope.launch {

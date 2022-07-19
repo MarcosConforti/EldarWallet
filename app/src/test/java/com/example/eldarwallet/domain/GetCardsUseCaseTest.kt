@@ -6,7 +6,6 @@ import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.RelaxedMockK
 import kotlinx.coroutines.runBlocking
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 
@@ -22,6 +21,17 @@ class GetCardsUseCaseTest {
         MockKAnnotations.init(this)
 
         getCardsUseCase = GetCardsUseCase(cardRepository)
+    }
+
+    @Test
+    fun `when the data base doesnt return anything`() = runBlocking {
+        //Given
+        coEvery { cardRepository.getCards() } returns emptyList()
+        //When
+        val response = getCardsUseCase()
+        //Then
+        assert(response != null)
+
     }
 
     @Test
@@ -41,4 +51,6 @@ class GetCardsUseCaseTest {
         //Then
         assert(myList == response)
     }
+
+
 }

@@ -3,12 +3,12 @@
     <string name="etUser" />
     <string name="etPass" />
     <string name="btn_next">Siguiente</string>
-    <string name="tv_loading">Cargando...</string>
+    <string name="tv_loading">Cargando…</string>
     <string name="saldo">Saldo Disponible:</string>
-    <string name="saldoDisponible">$200</string>
+    <string name="money">$200</string>
     <string name="loginError">Usuario o Contraseña invalido</string>
     <string name="cardError">Campos invalidos</string>
-    <string name="cardErrorTarjeta">Error al cargar Tarjeta</string>
+    <string name="cardErrorMessage">Error al cargar Tarjeta</string>
     <string name="etCardNumber">Numero de Tarjeta:</string>
     <string name="etCode">Codigo:</string>
     <string name="etYear">Año</string>
@@ -18,4 +18,12 @@
     <string name="expireDate">11/25</string>
     <string name="card">Nueva Tarjeta</string>
     <string name="cardOne">Tarjeta</string>
+    <string name="select_cards">Tarjetas disponibles:</string>
+    <string name="et_nameLastName">Ingrese nombre y apellido</string>
+    <string name="tv_availableBalance">Saldo disponible:</string>
+    <string name="generate_qr">Generar QR</string>
+    <string name="payment">Generar Pago</string>
+    <string name="add_transaction">Agregar transaccion</string>
+    <string name="succesful">Transaccion exitosa</string>
+
 </resources>

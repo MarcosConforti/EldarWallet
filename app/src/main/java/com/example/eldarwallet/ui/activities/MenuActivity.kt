@@ -1,16 +1,14 @@
 package com.example.eldarwallet.ui.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.eldarwallet.databinding.ActivityMenuBinding
 import com.example.eldarwallet.ui.cardRecycler.CardAdapter
 import com.example.eldarwallet.ui.viewmodel.MenuViewModel
-import com.google.zxing.integration.android.IntentIntegrator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,7 +32,7 @@ class MenuActivity : AppCompatActivity() {
         binding.btnAddNewCard.setOnClickListener {
             newCard()
         }
-        binding.btnAddNewCard.setOnClickListener {
+        binding.btnGeneratePayment.setOnClickListener {
             generatedPayment()
         }
         binding.btnQr.setOnClickListener {

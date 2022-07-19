@@ -1,12 +1,12 @@
 package com.example.eldarwallet.ui.activities
 
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Bitmap
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import com.example.eldarwallet.R
 import com.example.eldarwallet.databinding.ActivityQrBinding
-import com.example.eldarwallet.ui.viewmodel.MenuViewModel
 import com.example.eldarwallet.ui.viewmodel.QrViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,13 +21,21 @@ class QrActivity : AppCompatActivity() {
         binding = ActivityQrBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //Preguntar si esta bien
-        //Preguntar como cargar la imagen
-        qrViewModel.getQRLiveData.observe(this, Observer {
-            it->
-            val name: String = binding.etInfo.text.toString()
-            qrViewModel.callGetQRUseCase(name)
+
+        qrViewModel.getQRLiveData.observe(this, Observer { bitmap ->
+            bitmap?.let { binding.ivQr.setImageBitmap(bitmap); }
+
         })
+        binding.btnMostrarQr.setOnClickListener {
+            val name: String = binding.etInfo.text.toString()
+
+            if(name.isNotEmpty()){
+                qrViewModel.callGetQRUseCase(name)
+            }else{
+                Toast.makeText(this,"error",Toast.LENGTH_SHORT).show()
+            }
+        }
+
 
     }
 }

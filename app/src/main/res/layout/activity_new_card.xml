@@ -6,104 +6,135 @@
     android:layout_height="match_parent"
     tools:context=".ui.activities.NewCardActivity">
 
-    <TextView
-        android:id="@+id/tv_card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/card"
-        android:textSize="20sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <EditText
-        android:id="@+id/etCardNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:digits="1234567890"
-        android:maxLength="16"
-        android:hint="@string/etCardNumber"
-        android:textSize="20sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_card" />
-
-    <EditText
-        android:id="@+id/etCode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/etCode"
-        android:digits="1234567890"
-        android:maxLength="4"
-        android:textSize="20sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCardNumber" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+        android:id="@+id/linearLayout_blue"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:background="#8bbdff"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCode">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tvExpiration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/expiration"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:textStyle="italic" />
-        <EditText
-            android:id="@+id/etMonth"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv"
+            style="?attr/materialCardViewElevatedStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="1234567890"
-            android:maxLength="2"
-            android:paddingStart="10dp"
-            android:hint="@string/etMonth"
-            android:textSize="20sp"
-            android:textStyle="italic" />
-        <TextView
-            android:id="@+id/tvSpace"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" / "
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:textStyle="italic" />
+            android:padding="6dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="true"
+            tools:ignore="MissingConstraints">
 
-        <EditText
-            android:id="@+id/etYear"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:digits="1234567890"
-            android:maxLength="2"
-            android:hint="@string/etYear"
-            android:textSize="20sp"
-            android:textStyle="italic" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/tv_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
+                <EditText
+                    android:id="@+id/etCardNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:hint="@string/etCardNumber"
+                    android:maxLength="16"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_card" />
+
+                <EditText
+                    android:id="@+id/etCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:hint="@string/etCode"
+                    android:maxLength="4"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etCardNumber" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etCode">
+
+                    <TextView
+                        android:id="@+id/tvExpiration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/expiration"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="italic" />
+
+                    <EditText
+                        android:id="@+id/etMonth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="1234567890"
+                        android:hint="@string/etMonth"
+                        android:maxLength="2"
+                        android:paddingStart="10dp"
+                        android:textSize="20sp"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvSpace"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" / "
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="italic" />
+
+                    <EditText
+                        android:id="@+id/etYear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="1234567890"
+                        android:hint="@string/etYear"
+                        android:maxLength="2"
+                        android:textSize="20sp"
+                        android:textStyle="italic" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_addCard"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:text="@string/btn_addCard"
-        style="?attr/materialButtonOutlinedStyle"
-        app:cornerRadius= "20dp"
-        app:strokeColor="@color/purple_500"
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_blue"
+        app:strokeColor="@color/purple_500" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,7 +21,7 @@
         android:id="@+id/tv_tarjetasDisponibles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tarjetas disponibles:"
+        android:text="@string/select_cards"
         android:textSize="30sp"
         android:gravity="center"
         android:textColor="@color/black"
@@ -36,5 +36,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout_blue" />
+
+    <ImageButton
+        android:id="@+id/btn_generatePayment"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:elevation="10dp"
+        android:src="@mipmap/ic_payment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_cards"
+        app:strokeColor="@color/purple_500" />
+
+    <TextView
+        android:id="@+id/tv_newPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/add_transaction"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_generatePayment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

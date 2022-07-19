@@ -49,22 +49,22 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tv_saldo"
+                        android:id="@+id/tv_availableBalance"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:gravity="center"
-                        android:text="Saldo disponible:"
+                        android:text="@string/tv_availableBalance"
                         android:textColor="@color/black"
                         android:textSize="24sp"
                         android:textStyle="italic" />
 
                     <TextView
-                        android:id="@+id/tv_saldoDisponible"
+                        android:id="@+id/tv_money"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:gravity="center"
-                        android:hint="@string/saldoDisponible"
-                        android:text="$200"
+                        android:hint="@string/money"
+                        android:text="@string/money"
                         android:textColor="@color/black"
                         android:textSize="24sp"
                         android:textStyle="italic" />
@@ -103,11 +103,11 @@
         android:id="@+id/tv_newCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:text="Nueva tarjeta"
+        android:layout_marginStart="36dp"
+        android:text="@string/card"
         android:textColor="@color/black"
         android:textStyle="italic"
-        app:cornerRadius="20dp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_addNewCard" />
 
@@ -126,12 +126,12 @@
         android:id="@+id/tv_qr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:text="Generar QR"
+        android:text="@string/generate_qr"
         android:textColor="@color/black"
         android:textStyle="italic"
-        app:cornerRadius="20dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tv_newPayment"
         app:layout_constraintTop_toBottomOf="@id/btn_qr" />
@@ -153,11 +153,11 @@
         android:id="@+id/tv_newPayment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="Generar Pago"
+        android:layout_marginStart="10dp"
+        android:text="@string/payment"
         android:textColor="@color/black"
         android:textStyle="italic"
-        app:cornerRadius="20dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@id/tv_qr"
         app:layout_constraintStart_toEndOf="@id/tv_newCard"
         app:layout_constraintTop_toBottomOf="@id/btn_generatePayment" />

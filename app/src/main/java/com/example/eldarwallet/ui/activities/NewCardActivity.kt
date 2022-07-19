@@ -45,7 +45,7 @@ class NewCardActivity : AppCompatActivity() {
                 //limpiar los campos y no volver
                 goToMenu()
             } else {
-                showError(getText(R.string.cardErrorTarjeta).toString())
+                showError(getText(R.string.cardErrorMessage).toString())
             }
         })
 

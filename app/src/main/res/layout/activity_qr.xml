@@ -5,24 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activities.QrActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout_blue"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#8bbdff"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
     <EditText
         android:id="@+id/et_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="ingrese nombre y apellido"
+        android:hint="@string/et_nameLastName"
         android:textStyle="italic"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/iv_qr"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="500dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_info" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_blue" />
+
+    <Button
+        android:id="@+id/btn_mostrarQr"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_qr" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

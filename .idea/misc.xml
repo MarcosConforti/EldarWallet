@@ -5,12 +5,14 @@
       <map>
         <entry key="..\:/Users/marco/AndroidStudioProjects/EldarWallet/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.147" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/EldarWallet/app/src/main/res/drawable/ic_launcher_background.xml" value="0.147" />
+        <entry key="..\:/Users/marco/AndroidStudioProjects/EldarWallet/app/src/main/res/drawable/ic_money_foreground.xml" value="0.136" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/EldarWallet/app/src/main/res/drawable/ic_newPayment_foreground.xml" value="0.136" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/EldarWallet/app/src/main/res/drawable/ic_newcard_foreground.xml" value="0.136" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/EldarWallet/app/src/main/res/drawable/ic_payment_foreground.xml" value="0.136" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/EldarWallet/app/src/main/res/drawable/ic_qr_foreground.xml" value="0.136" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/EldarWallet/app/src/main/res/drawable/splash_screen.xml" value="0.147" />
-        <entry key="..\:/Users/marco/AndroidStudioProjects/EldarWallet/app/src/main/res/layout/activity_generated_payment.xml" value="0.1796875" />
+        <entry key="..\:/Users/marco/AndroidStudioProjects/EldarWallet/app/src/main/res/layout/activity_generated_payment.xml" value="0.22" />
+        <entry key="..\:/Users/marco/AndroidStudioProjects/EldarWallet/app/src/main/res/layout/activity_login.xml" value="0.1796875" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/EldarWallet/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/EldarWallet/app/src/main/res/layout/activity_menu.xml" value="0.22" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/EldarWallet/app/src/main/res/layout/activity_new_card.xml" value="0.22" />

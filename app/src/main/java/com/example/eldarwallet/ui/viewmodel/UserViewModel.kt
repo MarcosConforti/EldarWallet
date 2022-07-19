@@ -21,7 +21,7 @@ class UserViewModel @Inject constructor(private val getUserUseCase: GetUserUseCa
     fun callUserUseCase(user: String, pass: String) {
         viewModelScope.launch {
             val result = getUserUseCase(UserModel(user, pass))
-            delay(3000)
+            delay(2000)
             _userLiveData.value = result
         }
     }
